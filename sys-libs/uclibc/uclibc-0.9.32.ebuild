@@ -19,7 +19,7 @@ if [[ ${CTARGET} == ${CHOST} ]] && [[ ${CHOST} != *-uclibc* ]] ; then
 	export CTARGET=${CHOST%%-*}-pc-linux-uclibc
 fi
 
-MY_P=uClibc-${PV/_/-}
+MY_P=uClibc-${PV}
 PATCH_VER=""
 SVN_VER=""
 DESCRIPTION="C library for developing embedded Linux systems"
@@ -169,6 +169,9 @@ src_unpack() {
 		EPATCH_SUFFIX="patch"
 		epatch "${WORKDIR}"/patch
 	fi
+
+	epatch "${FILESDIR}"/${P}-BJA-sandbox.diff
+	epatch "${FILESDIR}"/${P}-crossdev.patch
 
 	########## CPU SELECTION ##########
 
