@@ -1,1 +1,4 @@
-Overlay with some fixed ebuilds for uclibc and other embedded systems
+Add this overlay to work with `crossdev` tool.
+For now, I wiped it as most of changes that was made here are either already upstreamed, or not needed anymore.
+
+But it is still possible that sometimes some packages would appear for some time (to monkeypatch things in non-gentoo-repo-acceptable way) before going to upstream or gentoo repo.
